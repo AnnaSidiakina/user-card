@@ -13,8 +13,9 @@ import {
 import logo from "../../assets/logo.png";
 import bgImage from "../../assets/bgImage.png";
 import avatar from "../../assets/avatars/avatar1.png";
+import PropTypes from "prop-types";
 
-const UserCard = () => {
+const UserCard = ({ totalTweets, totalFollowers, handleClick, isFollowed }) => {
   return (
     <>
       <Container>
@@ -32,12 +33,21 @@ const UserCard = () => {
           <Divider></Divider>
         </AvatarSectionContainer>
         <ContentContainer>
-          <Text>777 Tweets</Text>
-          <Text>100,500 Followers</Text>
-          <Button>Follow</Button>
+          <Text>{totalTweets} Tweets</Text>
+          <Text>{totalFollowers} Followers</Text>
+
+          <Button onClick={handleClick} isFollowed={isFollowed}>
+            {isFollowed ? "Following" : "Follow"}
+          </Button>
         </ContentContainer>
       </Container>
     </>
   );
+};
+UserCard.propTypes = {
+  totalTweets: PropTypes.number.isRequired,
+  totalFollowers: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  isFollowed: PropTypes.bool.isRequired,
 };
 export default UserCard;

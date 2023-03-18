@@ -71,10 +71,11 @@ export const Button = styled.button`
   width: 196px;
   border-radius: 10.3108px;
   cursor: pointer;
-  background: #ebd8ff;
+  background: ${({ isFollowed }) =>
+    isFollowed ? "#5CD3A8 !important" : "#ebd8ff !important"};
 
-  &:hover,
-  &:focus {
-    background: #d3a8ff;
+  &:hover {
+    background: ${({ isFollowed }) =>
+      isFollowed ? "#34cf96 !important" : "#d3a8ff !important"};
   }
 `;
