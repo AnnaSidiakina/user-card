@@ -1,2 +1,2 @@
-export const getFollowers = (state) => state.followers;
-export const getIsFollowing = (state) => state.isFollowed;
+export const getFollowers = (state) => state.followers.followers;
+export const getIsFollowing = (state) => state.followers.isFollowed;

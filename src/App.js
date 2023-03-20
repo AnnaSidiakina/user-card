@@ -1,44 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import UserCard from "./components/UserCard/UserCard";
 import { Container } from "./App.styled";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getFollowers, getIsFollowing } from "./redux/selectors";
+import { toggleFollowing } from "./redux/followingStatusSlice";
 
 function App() {
+  // transfer tweets value
   const totalTweets = 777;
-  // const totalFollowers = useSelector(getFollowers);
-  const [totalFollowers, setTotalFollowers] = useState(100500);
+
+  const isFollowing = useSelector(getIsFollowing);
+  const totalFollowers = useSelector(getFollowers);
+  const dispatch = useDispatch();
+
+  // convert followers number to string with comma
   const convertedTotalFollowers = totalFollowers.toLocaleString("en-US");
 
-  // const isFollowing = useSelector(getIsFollowing);
-
-  // const handleClick = () => {
-  //   if (isFollowing === false) {
-  //     setTotalFollowers((prev) => prev + 1);
-  //     setIsFollowed(true);
-  //   } else {
-  //     setTotalFollowers((prev) => prev - 1);
-  //     setIsFollowed(false);
-  //   }
-  // };
-
-  const [isFollowed, setIsFollowed] = useState(false);
   const handleClick = () => {
-    if (isFollowed === false) {
-      setTotalFollowers((prev) => prev + 1);
-      setIsFollowed(true);
-    } else {
-      setTotalFollowers((prev) => prev - 1);
-      setIsFollowed(false);
-    }
+    dispatch(toggleFollowing());
   };
+
   return (
     <Container>
       <UserCard
         totalTweets={totalTweets}
         totalFollowers={convertedTotalFollowers}
         handleClick={handleClick}
-        isFollowed={isFollowed}
+        isFollowed={isFollowing}
       />
     </Container>
   );

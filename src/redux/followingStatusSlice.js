@@ -8,10 +8,12 @@ const followingStatusSlice = createSlice({
   },
   reducers: {
     toggleFollowing(state) {
-      if (state.isFollowed) {
-        state.followers -= 1;
-      } else {
+      if (!state.isFollowed) {
         state.followers += 1;
+        state.isFollowed = true;
+      } else {
+        state.followers -= 1;
+        state.isFollowed = false;
       }
     },
   },
