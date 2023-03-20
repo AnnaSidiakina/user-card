@@ -38,12 +38,18 @@ export const Divider = styled.div`
 `;
 
 export const AvatarContainer = styled.div`
+  overflow: hidden;
   object-fit: cover;
-  width: 80px;
+  width: 150px;
   box-shadow: 0px 4.39163px 4.39163px -4px rgba(0, 0, 0, 0.06),
     0px 0px 10px 2px #ae7be3, 0px 0px 0px 8px #fbf8ff;
   border-radius: 50%;
   z-index: 2;
+`;
+
+export const Avatar = styled.img`
+  width: 64px;
+  height: 64px;
 `;
 
 export const ContentContainer = styled.div`

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "user": "Elon Reeve Mask",
+    "tweets": 777,
+    "followers": 100500,
+    "avatar": "https://cdn.pixabay.com/photo/2022/01/19/09/26/elon-musk-6949267_1280.png"
+  },
+  {
+    "id": 2,
+    "user": "Boris Johnsonuk",
+    "tweets": 888,
+    "followers": 200600,
+    "avatar": "https://cdn.pixabay.com/photo/2019/10/03/15/23/boris-johnson-4523633_1280.png"
+  },
+  {
+    "id": 3,
+    "user": "John Dow",
+    "tweets": 999,
+    "followers": 104900,
+    "avatar": "https://cdn.pixabay.com/photo/2019/02/22/17/04/man-4013984_1280.png"
+  },
+  {
+    "id": 4,
+    "user": "Molly Fisher",
+    "tweets": 545,
+    "followers": 507837,
+    "avatar": "https://cdn.pixabay.com/photo/2014/04/03/00/29/woman-308451_1280.png"
+  }
+]
