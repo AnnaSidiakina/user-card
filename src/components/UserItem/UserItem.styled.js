@@ -54,6 +54,7 @@ export const Avatar = styled.img`
 
 export const ContentContainer = styled.div`
   padding: 26px 20px 36px 20px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,12 +74,14 @@ export const Button = styled.button`
   color: rgba(55, 55, 55, 1);
   font-weight: 600;
   font-size: 18px;
+  margin-top: 10px;
   padding: 14px;
   width: 196px;
   border-radius: 10.3108px;
   cursor: pointer;
   background: ${({ isFollowed }) =>
     isFollowed ? "#5CD3A8 !important" : "#ebd8ff !important"};
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     background: ${({ isFollowed }) =>
