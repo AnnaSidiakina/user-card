@@ -1,18 +1,16 @@
 import React from "react";
 import {
   Container,
-  ImageContainer,
   AvatarSectionContainer,
-  Divider,
   AvatarContainer,
   HeaderContainer,
   ContentContainer,
   Text,
   Button,
   Avatar,
+  Logo,
 } from "./UserItem.styled";
-import logo from "../../assets/logo.png";
-import bgImage from "../../assets/bgImage.png";
+import logo from "../../assets/images/logo.png";
 import { getIsFollowing } from "../../redux/selectors";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -43,18 +41,13 @@ const UserItem = ({ id, avatar, tweets, followers }) => {
   return (
     <Container>
       <HeaderContainer>
-        <img src={logo} alt="Logo" />
-        <ImageContainer>
-          <img src={bgImage} alt="bgImage" />
-        </ImageContainer>
+        <Logo src={logo} alt="Logo" />
       </HeaderContainer>
 
       <AvatarSectionContainer>
-        <Divider></Divider>
         <AvatarContainer>
           <Avatar src={avatar} alt="Avatar" />
         </AvatarContainer>
-        <Divider></Divider>
       </AvatarSectionContainer>
       <ContentContainer>
         <Text>{tweets} Tweets</Text>
